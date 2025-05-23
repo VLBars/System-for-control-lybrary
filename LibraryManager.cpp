@@ -21,7 +21,6 @@ std::string LibraryManager::getCurrentDate() const {
 }
 
 void LibraryManager::saveData() {
-    setlocale(LC_ALL, "Russian");
     std::ofstream booksFile("books.txt");
     for (const auto& book : books) {
         booksFile << book.getId() << "|" << book.getTitle() << "|"
@@ -51,7 +50,6 @@ void LibraryManager::saveData() {
 }
 
 void LibraryManager::loadData() {
-    setlocale(LC_ALL, "Russian");
     // Загрузка книг
     std::ifstream booksFile("books.txt");
     if (booksFile) {
